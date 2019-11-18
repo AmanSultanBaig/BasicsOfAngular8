@@ -1,0 +1,69 @@
+<p>Interpolation! {{name}}</p>
+<h4>Event Binding</h4>
+<input type="text" #myInput [disabled]="false" value="{{name}}" class="{{Mydanger}}">
+<button (click)='ClickMe(myInput)'>Click ME</button>
+<hr />
+{{  input }}
+
+<hr />
+<h4>Two Way Data Binding</h4>
+<input type="text" [(ngModel)]='MyModel'>
+<br />
+{{MyModel}}
+
+<hr />
+<h1>If Statements</h1>
+
+<input type="radio" (click)='clickTrue()' name="radio" /> true
+<input type="radio" (click)='clickFalse()' name="radio" /> false
+<div *ngIf="isLogin; then thenBlock else elseBlock"></div>
+
+<ng-template #thenBlock>
+    <h4>The following statement is {{MyVal}}</h4>
+</ng-template>
+
+<ng-template #elseBlock>
+    <h4>The following statement is {{MyVal}}</h4>
+</ng-template>
+
+<hr />
+<h4>For Loop</h4>
+
+
+<table class='table'>
+    <tr>
+        <th>Name</th>
+        <th>Position</th>
+    </tr>
+    <tr *ngFor='let employee of employees'>
+        <td>{{employee.name}}</td>
+        <td>{{employee.position}}</td>
+    </tr>
+</table>
+<br />
+<hr />
+
+<h4>Pipes</h4>
+
+<li>{{'Aman sultan baig' | lowercase}}</li>
+<li>{{'Aman sultan baig' | uppercase}}</li>
+<li>{{'Aman sultan baig' | titlecase}}</li>
+<hr />
+<!-- by defualt currency pipe show $ -->
+<li>{{1928 | currency}}</li>
+<li>{{1928 | currency:'GBP'}}</li>
+<li>{{1928 | currency:'EUR'}}</li>
+<hr />
+<li>{{1.928232 | number:'1.2-2'}}</li>
+<li>{{1.928232 | number}}</li>
+<hr/>
+<li>{{myDate}}</li>
+<li>{{myDate | date}}</li>
+<li>{{myDate | date:'dd-MM-yyyy'}}</li>
+<li>{{myDate | date:'shortDate'}}</li>
+<li>{{myDate | date:'mediumDate'}}</li>
+<li>{{myDate | date:'longDate'}}</li>
+<hr/>
+<li>{{myDate | date:'shortTime'}}</li>
+<li>{{myDate | date:'mediumTime'}}</li>
+<li>{{myDate | date:'longTime'}}</li>
