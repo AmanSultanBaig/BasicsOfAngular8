@@ -7,36 +7,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeComponent implements OnInit {
 
-  public name = 'Aman Sultan Baig';
-  public Mysuccess = 'success';
-  public Mydanger = 'danger';
-  public input = '';
+ name = 'Angular';
+  public date = new Date();
 
-  public isLogin = false
-  public MyVal = false
+  public myNewArry:any = [];
 
-  public employees = [
-    {name: 'Aman Sultan Baig', position:'Full Stack JS Developer'},
-    {name: 'Nabeel Jameel', position:'Angular Developer'},
-    {name: 'Haris Ahmed ', position:'React Native Developer'},
-  ];
-
-  public myDate = new Date();
-
-  constructor() { }
-
-  ngOnInit() {
+  constructor(){
+    setTimeout(() => {
+      this.date.toLocaleTimeString
+    },1000)
   }
 
-  ClickMe(myInput) {
-    this.input = myInput.value
-  }
+  public myName = 'Aman Sultan Baig'
 
-  clickTrue(){
-    this.isLogin = this.MyVal = true
-  }
-  clickFalse(){
-    this.isLogin = this.MyVal = false
-  }
+  public EmployeeList:any = [
+    {name: 'Aman Sultan Baig', position:'JS Developer'},
+    {name: 'Salman Akhtar', position:'JQuery Developer'},
+    {name: 'Haris Ahmed Sheikh', position:'PHP Developer'},
+    {name: 'Raza Tahir', position:'ASP.Net Developer'},
+  ]
+ clickMe(myInput){
+   (!myInput.value) ? alert('Enter Value First') : this.EmployeeList.push({
+     name: myInput.value,
+     position : 'no Designation Assigned yet!' 
+   });   
+   myInput.value = ''
+ }
 
 }
