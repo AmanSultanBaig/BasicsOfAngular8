@@ -1,18 +1,20 @@
-.success {
-    color:green
+p {
+  font-family: Lato;
 }
 
-.danger {
-    color: red
-}
-.table {
-    width: 100%
+table {
+  margin: 0;
+  margin-top: 5%;
+  width: 100%
 }
 
-.table th{
-    border: 1px solid #ccc
+th {
+  padding: 10px;
+  border: 1px #ccc solid
 }
-.table td{
-    font-size: 10px;
-    border: 1px solid #ccc
+
+td {
+  border: 1px #ccc solid;
+  text-align: center
 }
+
